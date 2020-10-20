@@ -2,9 +2,17 @@
 <router-view></router-view>
 </template>
 
-<script>
+<script lang="ts">
+import {
+    provide,
+    ref
+} from 'vue'
 export default {
     name: 'App',
+    setup() {
+        const menuVisible = ref(false)
+        provide('xxx', menuVisible)
+    },
     components: {
 
     }
