@@ -1,0 +1,45 @@
+<template>
+<div>
+    Tabs的文档
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+    <p>tabs文档</p>
+</div>
+</template>
