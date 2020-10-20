@@ -29,7 +29,7 @@ export default {
     justify-content: center;
     align-items: center;
     background: lightgreen;
-
+    
     >.actions {
         padding: 8px 0;
 
