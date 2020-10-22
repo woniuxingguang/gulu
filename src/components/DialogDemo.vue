@@ -1,45 +1,14 @@
 <template>
 <div>
-    Dialog的文档
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
-    <p>dialog文档</p>
+    <Dialog />
 </div>
 </template>
+
+<script>
+import Dialog from '../lib/Dialog.vue'
+export default {
+    components: {
+        Dialog
+    }
+}
+</script>
