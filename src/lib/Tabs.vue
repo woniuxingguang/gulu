@@ -1,8 +1,9 @@
 <template>
 <div>
     <div class="gulu-tabs">
-        <div class="gulu-tabs-nav">
-            <div class="gulu-tabs-nav-item" :class="{selected: t == selected}" v-for="(t,index) in titles" :key="index" @click="select(t)">{{t}}</div>
+        <div class="gulu-tabs-nav" ref="container">
+            <div class="gulu-tabs-nav-item" :class="{selected: t == selected}" v-for="(t,index) in titles" :key="index" :ref="el => { if (el) navItems[index] = el}" @click="select(t)">{{t}}</div>
+            <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <div class="gulu-tabs-content">
             <component class="gulu-tabs-content-item" v-for="(c,index) in defaults" :is="c" :key="index" :class="{selected: c.props.title == selected}"></component>
@@ -13,7 +14,10 @@
 
 <script lang="ts">
 import {
-    computed
+    computed,
+    onMounted,
+    onUpdated,
+    ref
 } from 'vue'
 import Tab from './Tab.vue'
 
@@ -24,6 +28,34 @@ export default {
         }
     },
     setup(props, context) {
+        const navItems = ref < HTMLDivElement[] > ([])
+        const indicator = ref < HTMLDivElement > (null)
+        const container = ref < HTMLDivElement > (null)
+        const x = () => {
+            const divs = navItems.value
+            const result = divs.filter(div => div.classList.contains('selected'))[0]
+            // 获取宽度
+            const {
+                width
+            } = result.getBoundingClientRect()
+            // 动态给导航 下边横线
+            indicator.value.style.width = width + 'px'
+            // container 的left坐标
+            const {
+                left: left1
+            } = container.value.getBoundingClientRect()
+            //获取当前 选中 nav 的left坐标
+            const {
+                left: left2
+            } = result.getBoundingClientRect()
+            const left = left2 - left1
+            // 动态 indicator 的位置
+            indicator.value.style.left = left + 'px'
+        }
+        //挂载之后打印出来,只在第一次渲染执行
+        onMounted(x)
+        //更新的时候
+        onUpdated(x)
         const defaults = context.slots.default()
         defaults.forEach((tag) => {
             if (tag.type !== Tab) {
@@ -46,7 +78,10 @@ export default {
             defaults,
             titles,
             current,
-            select
+            select,
+            navItems,
+            indicator,
+            container
         }
     }
 }
@@ -59,6 +94,7 @@ $border-color: #d9d9d9;
 
 .gulu-tabs {
     &-nav {
+        position: relative;
         display: flex;
         color: $color;
         border-bottom: 1px solid $border-color;
@@ -76,6 +112,17 @@ $border-color: #d9d9d9;
                 color: $blue;
             }
         }
+
+        &-indicator {
+            position: absolute;
+            height: 3px;
+            background: $blue;
+            left: 0;
+            bottom: -1px;
+            width: 100px;
+            transition: all 250ms;
+        }
+
     }
 
     &-content {
