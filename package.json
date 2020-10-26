@@ -6,6 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "github-markdown-css": "^4.0.0",
     "marked": "^1.2.2",
     "vue": "^3.0.0-rc.1",
