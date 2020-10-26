@@ -9,20 +9,20 @@ import {
 } from 'vue'
 export default {
     props: {
-        path: {
+        content: {
             type: String,
             required: true
         }
     },
-    setup(props) {
-        const content = ref < string > (null)
-        // 动态 异步引入
-        import(props.path).then(result => {
-            content.value = result.default
-        })
-        return {
-            content
-        }
-    }
+    // setup(props) {
+    //     const content = ref < string > (null)
+    //     // 动态 异步引入
+    //     import(props.content).then(result => {
+    //         content.value = result.default
+    //     })
+    //     return {
+    //         content
+    //     }
+    // }
 }
 </script>
