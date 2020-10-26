@@ -18,7 +18,6 @@ import Switch2Demo from './Switch2.demo.vue'
 import 'prismjs'
 import 'prismjs/themes/prism.css'
 const Prism = (window as any).Prism
-console.log(Prism)
 
 export default {
     components: {
